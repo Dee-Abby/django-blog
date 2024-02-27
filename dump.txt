@@ -1,0 +1,17 @@
+
+In [1]: import json
+
+In [2]: from blog.models import *
+
+In [3]: with open('post.json') as f:
+   ...:     posts_json = json.load(f)
+   ...: 
+
+In [4]: for chat in posts_json:
+   ...:     chat = Chat(title=chat['title'], content=chat['content'], author_id=chat['u
+   ...: ser_id'])
+   ...:     chat.save()
+   ...: 
+
+
+In [5]: 
